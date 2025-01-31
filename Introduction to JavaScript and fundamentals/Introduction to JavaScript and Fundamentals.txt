@@ -1,0 +1,124 @@
+**Q1. What is JavaScript and its Role in Web Development?**  
+JavaScript is a **high-level, interpreted programming language** primarily used for making web pages interactive. It allows developers to create dynamic content, control multimedia, and update the user interface without requiring a page reload.  
+
+ **Role in Web Development:**  
+1. **Enhances Interactivity** – Enables animations, form validation, and interactive elements.  
+2. **Manipulates HTML & CSS** – Can dynamically modify the webpage structure and styling.  
+3. **Handles User Input** – Processes user interactions like button clicks, form submissions, and keyboard events.  
+4. **Enables Asynchronous Communication** – Fetches data from APIs without reloading the page using AJAX and Fetch API.  
+5. **Supports Modern Frameworks & Libraries** – Essential for React, Angular, and Vue.js development.  
+
+---
+
+ **Q2. Key Differences Between JavaScript and HTML**  
+
+| Feature      | HTML | JavaScript |
+|-------------|------|------------|
+| **Purpose** | Defines the structure and content of a webpage. | Adds interactivity and dynamic behavior to a webpage. |
+| **Type** | Markup Language | Programming Language |
+| **Execution** | Interpreted by the browser to render the page. | Executed by the browser's JavaScript engine. |
+| **Usage** | Used to create elements like headings, paragraphs, images, and links. | Used for event handling, animations, form validation, and API calls. |
+
+ **Example Use Cases:**  
+- **HTML:** When structuring a webpage, like adding headings and images.  
+  ```html
+  <h1>Welcome to My Website</h1>
+  <img src="image.jpg" alt="A beautiful scenery">
+  ```
+- **JavaScript:** When making the button interactive.  
+  ```js
+  document.getElementById("myButton").addEventListener("click", function() {
+      alert("Button Clicked!");
+  });
+  ```
+
+---
+
+**Q3. Five Primitive Data Types in JavaScript**  
+
+1. **Number** – Represents both integer and floating-point numbers.  
+   ```js
+   let age = 25;
+   let price = 99.99;
+   ```
+2. **String** – A sequence of characters enclosed in quotes.  
+   ```js
+   let name = "John Doe";
+   ```
+3. **Boolean** – Represents true or false values.  
+   ```js
+   let isStudent = true;
+   ```
+4. **Undefined** – A variable that has been declared but not assigned a value.  
+   ```js
+   let x;
+   console.log(x);  // undefined
+   ```
+5. **Null** – Represents an intentional absence of value.  
+   ```js
+   let emptyValue = null;
+   ```
+
+---
+
+**Q4. Purpose of Declaring Variables and Using the `let` Keyword**  
+Variables store and manage data in a JavaScript program. They allow dynamic manipulation and retrieval of values during execution.  
+
+**Declaring Variables Using `let`:**  
+- The `let` keyword allows you to declare variables that **can be reassigned**.  
+- It has **block scope**, meaning it only exists within the `{}` block where it is defined.  
+
+**Example:**  
+```js
+let username = "Alice";
+console.log(username);  // Output: Alice
+
+username = "Bob";  // Reassigning the variable
+console.log(username);  // Output: Bob
+```
+
+---
+
+ **Q5. Importance of Comments in JavaScript & Examples**  
+Comments help developers understand code, improve readability, and document functionality.  
+
+**Importance:**  
+- Explain code for future reference.  
+- Debugging assistance.  
+- Temporarily disable code without deleting it.  
+
+**Single-line Comment:**  
+```js
+// This is a single-line comment
+let age = 25;
+```
+
+**Multi-line Comment:**  
+```js
+/*
+This is a multi-line comment.
+It can span multiple lines.
+*/
+let name = "John";
+```
+
+---
+
+### **Q6. Importance of Meaningful and Descriptive Variable Names**  
+Using clear variable names makes code easier to understand and maintain.  
+
+#### **Example:**  
+**Poor Variable Naming:**  
+```js
+let x = 500;  
+let y = 10;  
+let z = x * y;  // What do x, y, and z represent?
+```
+**Better Naming:**  
+```js
+let productPrice = 500;  
+let quantity = 10;  
+let totalCost = productPrice * quantity;
+```
+
+Descriptive names improve **readability**, reduce errors, and help other developers understand the logic quickly.
