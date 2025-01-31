@@ -1,0 +1,118 @@
+Q1. Role of Operators in JavaScript and Their Importance  
+Operators in JavaScript perform operations on variables and values, such as arithmetic calculations, comparisons, and logical decisions.  
+
+**Importance of Operators:**  
+- Enable mathematical and logical operations.  
+- Facilitate decision-making using comparison and logical operators.  
+- Help in assigning and manipulating variable values.  
+- Improve code efficiency and readability.  
+
+---
+
+Q2. Categorization of Operators in JavaScript with Examples  
+
+1. **Arithmetic Operators** (Used for mathematical calculations)  
+   ```js
+   let sum = 10 + 5;  // Addition
+   let product = 10 * 5;  // Multiplication
+   ```
+2. **Assignment Operators** (Assign values to variables)  
+   ```js
+   let x = 10;
+   x += 5;  // Equivalent to x = x + 5
+   ```
+3. **Comparison Operators** (Compare values and return boolean results)  
+   ```js
+   console.log(10 > 5);  // true
+   console.log(10 === "10");  // false (strict equality check)
+   ```
+4. **Logical Operators** (Used for boolean logic)  
+   ```js
+   console.log(true && false);  // false
+   console.log(true || false);  // true
+   ```
+5. **Bitwise Operators** (Operate on binary values)  
+   ```js
+   console.log(5 & 1);  // Bitwise AND
+   console.log(5 | 1);  // Bitwise OR
+   ```
+6. **Ternary Operator** (Short-hand for if-else conditions)  
+   ```js
+   let age = 20;
+   let canVote = (age >= 18) ? "Yes" : "No";
+   console.log(canVote);  // "Yes"
+   ```
+---
+
+Q3. Difference Between Unary, Binary, and Ternary Operators  
+
+1. **Unary Operator** (Works with a single operand)  
+   ```js
+   let x = 5;
+   console.log(-x);  // -5
+   console.log(++x);  // 6
+   ```
+2. **Binary Operator** (Works with two operands)  
+   ```js
+   let sum = 10 + 5;  // Addition (10 and 5 are operands)
+   ```
+3. **Ternary Operator** (Works with three operands)  
+   ```js
+   let result = (10 > 5) ? "Greater" : "Smaller";
+   console.log(result);  // "Greater"
+   ```
+
+---
+
+Q4. Precedence and Associativity of Operators in JavaScript  
+
+**Operator Precedence**  
+Defines the order in which operations are executed. Higher precedence operators execute first.  
+Example:  
+```js
+console.log(10 + 5 * 2);  // Output: 20 (Multiplication has higher precedence than addition)
+```
+ **Associativity**  
+Determines the direction in which operators with the same precedence level are evaluated.  
+- **Left to Right**: `+`, `-`, `*`, `/`, `%`  
+- **Right to Left**: `=` (Assignment), `**` (Exponentiation)  
+
+Example:  
+```js
+let x = 10;
+let y = x = 5;  // Right to left: x is assigned 5 first, then y gets 5
+console.log(y);  // 5
+```
+**Importance**  
+- Helps avoid unexpected results.  
+- Ensures correct evaluation of expressions.  
+- Reduces the need for unnecessary parentheses.  
+
+---
+
+Q5. JavaScript Program to Calculate Simple Interest  
+```js
+function simpleInterest(principal, rate, time) {
+    return (principal * rate * time) / 100;
+}
+console.log(simpleInterest(1000, 5, 2));  // Output: 100
+```
+
+---
+
+Q6. JavaScript Program to Calculate BMI  
+```js
+function calculateBMI(weight, height) {
+    return weight / (height * height);
+}
+console.log(calculateBMI(70, 1.75));  // Example: Output 22.86
+```
+
+---
+
+ Q7. JavaScript Program to Calculate the Area of a Circle (Radius = 10)  
+```js
+const radius = 10;
+const area = Math.PI * radius * radius;
+console.log("Area of the circle:", area.toFixed(2));  // Output: 314.16
+```
