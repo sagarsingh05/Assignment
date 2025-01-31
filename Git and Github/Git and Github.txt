@@ -1,0 +1,157 @@
+Q1. Explain what version control is and its importance in software development.  
+**Version control** is a system that helps track changes to files over time, allowing developers to collaborate efficiently, revert to previous versions, and manage code changes systematically.  
+
+**Importance of Version Control in Software Development:**  
+1. **Collaboration:** Enables multiple developers to work on the same project without conflicts.  
+2. **Change Tracking:** Maintains a history of modifications, making it easy to review and revert changes.  
+3. **Backup & Recovery:** Acts as a backup in case of accidental deletions or errors.  
+4. **Branching & Merging:** Facilitates feature development in isolated branches before merging them into the main codebase.  
+5. **Code Stability & Testing:** Ensures stable versions of the software are available while testing new features.  
+
+---
+
+Q2. Explain the Git Workflow, including the staging area, working directory, and repository.  
+The **Git Workflow** involves three main areas where code changes occur:  
+
+1. **Working Directory:** This is where you create, modify, and delete files. It represents the current state of your project.  
+2. **Staging Area:** Before committing changes, you add modified files to the staging area (`git add`), indicating they are ready to be committed.  
+3. **Repository:** The committed files are stored in the local repository using `git commit`, creating a snapshot of the project history.  
+
+**Git Workflow Steps:**  
+1. **Modify files** in the working directory.  
+2. **Stage changes** using `git add <filename>` (moves files to the staging area).  
+3. **Commit changes** using `git commit -m "commit message"` (stores changes in the local repository).  
+4. **Push changes** to a remote repository (`git push origin main`).  
+5. **Pull updates** from the remote repository using `git pull`.  
+
+---
+
+Q3. Explain what `.gitignore` is and why it’s important in version control.  
+A **`.gitignore`** file tells Git which files and directories should be ignored and not tracked in version control.  
+
+**Importance of `.gitignore`:**  
+1. **Avoids Unnecessary Files in Repositories:** Prevents tracking of temporary files, build artifacts, and sensitive files.  
+2. **Keeps Repository Clean:** Prevents clutter from unnecessary files (e.g., log files, compiled binaries).  
+3. **Security:** Helps in ignoring environment files containing sensitive information (e.g., `.env` files).  
+
+**Example of a `.gitignore` file:**  
+```plaintext
+node_modules/
+.env
+dist/
+.DS_Store
+```
+This ignores `node_modules`, `.env`, build files (`dist/`), and system-generated files (`.DS_Store` on macOS).  
+
+---
+
+ Q4. Briefly explain what GitHub is and how it facilitates collaboration and version control. Also, name some alternatives to GitHub.  
+**GitHub** is a cloud-based platform that provides Git repository hosting, enabling developers to collaborate, manage code, and track versions efficiently.  
+
+**How GitHub Facilitates Collaboration & Version Control:**  
+1. **Remote Repository:** Stores Git repositories online, making code accessible to team members.  
+2. **Branching & Merging:** Allows developers to work on features in separate branches and merge them when ready.  
+3. **Pull Requests (PRs):** Enables code reviews before merging changes into the main branch.  
+4. **Issue Tracking:** Helps track bugs, feature requests, and discussions.  
+5. **CI/CD Integration:** Supports automated testing and deployment workflows.  
+
+**Alternatives to GitHub:**  
+- **GitLab** – Provides built-in CI/CD and DevOps tools.  
+- **Bitbucket** – Popular among teams using Atlassian products like Jira.  
+- **SourceForge** – Supports open-source projects.  
+- **AWS CodeCommit** – A Git repository service hosted on AWS.  
+
+---
+ Q5. Describe the process of contributing to any open-source project on GitHub in a step-by-step manner.  
+
+#### **Step 1: Find a Project**  
+- Browse **GitHub Explore** or search for repositories in your field of interest.  
+- Look for issues labeled **"good first issue"** or **"help wanted"**.  
+
+#### **Step 2: Fork the Repository**  
+- Click the **Fork** button on the project’s GitHub page to create a copy under your account.  
+
+#### **Step 3: Clone the Forked Repository**  
+- Run the following command in the terminal:  
+  ```bash
+  git clone https://github.com/your-username/project-name.git
+  ```
+- Navigate to the project folder:  
+  ```bash
+  cd project-name
+  ```
+
+#### **Step 4: Create a New Branch**  
+- Use a feature branch to make changes:  
+  ```bash
+  git checkout -b feature-branch-name
+  ```
+
+#### **Step 5: Make Changes and Commit**  
+- Modify the code and save changes.  
+- Stage changes:  
+  ```bash
+  git add .
+  ```
+- Commit changes:  
+  ```bash
+  git commit -m "Added a new feature"
+  ```
+
+#### **Step 6: Push Changes to Your Forked Repository**  
+```bash
+git push origin feature-branch-name
+```
+
+#### **Step 7: Open a Pull Request (PR)**  
+- Go to the original repository on GitHub.  
+- Click **"New Pull Request"** and compare changes.  
+- Add a description and submit the PR.  
+
+#### **Step 8: Collaborate & Fix Issues**  
+- Address feedback from maintainers.  
+- Update the PR if required (`git commit --amend` or `git push`).  
+
+#### **Step 9: Merge and Celebrate!**  
+- Once approved, your PR gets merged into the main repository. 🎉  
+
+---
+
+### Q6. Deploy Tailwind projects named YouTube, Slack, and Gmail clones on GitHub Pages and share the deployed links.  
+**Steps to Deploy Tailwind Projects on GitHub Pages:**  
+
+#### **Step 1: Create a GitHub Repository for Each Project**  
+- Go to [GitHub](https://github.com/) and create repositories for **YouTube Clone**, **Slack Clone**, and **Gmail Clone**.  
+
+#### **Step 2: Push Your Project Code to GitHub**  
+1. Initialize Git inside each project folder:  
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   ```
+2. Add the GitHub repository as a remote origin:  
+   ```bash
+   git remote add origin https://github.com/your-username/repository-name.git
+   git push -u origin main
+   ```
+
+#### **Step 3: Enable GitHub Pages**  
+1. Go to **Settings > Pages** in your repository.  
+2. Under **Source**, select **Deploy from Branch**.  
+3. Choose `main` and `/ (root)` as the directory, then save.  
+
+#### **Step 4: Wait for Deployment**  
+- GitHub will deploy your site, and the live URL will be:  
+  ```
+  https://your-username.github.io/repository-name/
+  ```
+
+#### **Expected Output: Hosted URLs**  
+Once deployed, the expected URLs will be:  
+- **YouTube Clone:** `https://your-username.github.io/youtube-clone/`  
+- **Slack Clone:** `https://your-username.github.io/slack-clone/`  
+- **Gmail Clone:** `https://your-username.github.io/gmail-clone/`  
+
+After deployment, share these links as part of your assignment submission.
