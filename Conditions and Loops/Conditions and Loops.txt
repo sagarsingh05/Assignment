@@ -1,0 +1,93 @@
+**Q1. What are conditional statements? Explain conditional statements with syntax and examples.**  
+**Conditional statements** are used in programming to perform different actions based on different conditions. These conditions are usually evaluated as **true** or **false**, and based on the result, specific blocks of code execute.  
+
+**Types of Conditional Statements**  
+1. **if statement**  
+2. **if-else statement**  
+3. **if-else if-else statement**  
+4. **switch statement**  
+
+ **Example and Syntax**  
+```javascript
+// Example: Checking if a number is positive or negative
+let num = 10;
+
+if (num > 0) {
+    console.log("The number is positive.");
+} else {
+    console.log("The number is negative.");
+}
+```
+
+---
+
+**Q2. Program to Grade Students Based on Marks**  
+```javascript
+function getGrade(marks) {
+    if (marks > 90) {
+        return "A Grade";
+    } else if (marks > 70) {
+        return "B Grade";
+    } else if (marks > 50) {
+        return "C Grade";
+    } else {
+        return "F Grade";
+    }
+}
+
+// Test the function
+let studentMarks = 85;
+console.log("Student Grade:", getGrade(studentMarks));
+```
+
+---
+
+ **Q3. What are loops, and why do we need them? Explain different types of loops with syntax and examples.**  
+**Loops** are used in programming to **execute a block of code multiple times**. They help reduce redundancy and make the code more efficient.  
+
+**Types of Loops in JavaScript**  
+1. **for loop**  
+2. **while loop**  
+3. **do-while loop**  
+
+**Example and Syntax**  
+```javascript
+// Example: Using a for loop to print numbers from 1 to 5
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+```
+
+---
+
+**Q4. Generate Numbers Between Any Two Given Numbers**  
+```javascript
+function generateNumbers(start, end) {
+    for (let i = start + 1; i <= end; i++) {
+        console.log(i);
+    }
+}
+
+let num1 = 10;
+let num2 = 25;
+generateNumbers(num1, num2);
+```
+
+---
+
+**Q5. Use the while loop to print numbers from 1 to 25 in ascending and descending order.**  
+
+// Ascending Order
+let i = 1;
+while (i <= 25) {
+    console.log(i);
+    i++;
+}
+
+// Descending Order
+let j = 25;
+while (j >= 1) {
+    console.log(j);
+    j--;
+}
+```
