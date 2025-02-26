@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { width: 300px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        input, select { width: 100%; margin: 5px 0; padding: 8px; }
+        button { width: 100%; padding: 10px; background-color: blue; color: white; border: none; cursor: pointer; }
+        .error { color: red; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign-Up</h2>
+        <form onsubmit="return validateForm()">
+            <input type="text" id="fname" placeholder="First Name">
+            <span class="error" id="fnameError"></span>
+
+            <input type="text" id="lname" placeholder="Last Name">
+            <span class="error" id="lnameError"></span>
+
+            <input type="email" id="email" placeholder="Email">
+            <span class="error" id="emailError"></span>
+
+            <input type="password" id="password" placeholder="Password">
+            <span class="error" id="passwordError"></span>
+
+            <input type="password" id="confirmPassword" placeholder="Confirm Password">
+            <span class="error" id="confirmPasswordError"></span>
+
+            <input type="number" id="age" placeholder="Age">
+            <span class="error" id="ageError"></span>
+
+            <select id="gender">
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <span class="error" id="genderError"></span>
+
+            <input type="checkbox" id="terms"> I agree to the Terms & Conditions
+            <span class="error" id="termsError"></span>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            let valid = true;
+            document.querySelectorAll(".error").forEach(e => e.innerText = ""); 
+
+            let fname = document.getElementById("fname").value;
+            if (fname.length < 3) {
+                document.getElementById("fnameError").innerText = "First name must be at least 3 characters";
+                valid = false;
+            }
+
+            let lname = document.getElementById("lname").value;
+            if (lname.length < 3) {
+                document.getElementById("lnameError").innerText = "Last name must be at least 3 characters";
+                valid = false;
+            }
+
+            let email = document.getElementById("email").value;
+            if (!email.includes("@")) {
+                document.getElementById("emailError").innerText = "Enter a valid email";
+                valid = false;
+            }
+
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+            if (password.length < 6) {
+                document.getElementById("passwordError").innerText = "Password must be at least 6 characters";
+                valid = false;
+            }
+            if (password !== confirmPassword) {
+                document.getElementById("confirmPasswordError").innerText = "Passwords do not match";
+                valid = false;
+            }
+
+            let age = document.getElementById("age").value;
+            if (age < 0 || age > 150) {
+                document.getElementById("ageError").innerText = "Enter a valid age (0-150)";
+                valid = false;
+            }
+
+            let terms = document.getElementById("terms").checked;
+            if (!terms) {
+                document.getElementById("termsError").innerText = "You must agree to terms";
+                valid = false;
+            }
+
+            return valid;
+        }
+    </script>
+</body>
+</html>
