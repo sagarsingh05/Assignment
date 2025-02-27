@@ -1,0 +1,4 @@
+.box {
+    background-color: green; /* This will be overridden by internal & inline CSS */
+    color: white;
+}

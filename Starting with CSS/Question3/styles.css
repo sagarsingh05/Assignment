@@ -1,0 +1,40 @@
+/* Form Styles */
+form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+}
+
+/* Input Fields */
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Custom Color on Focus */
+.input-field:focus {
+    border-color: #007bff;
+    background-color: #e6f7ff;
+}
+
+/* Button */
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Button Hover */
+.btn:hover {
+    background-color: #0056b3;
+}
