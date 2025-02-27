@@ -1,0 +1,85 @@
+
+## **1. Features of HTML6**  
+HTML6 is not officially released yet, but based on expectations and advancements in **HTML5**, potential **features** of HTML6 might include:
+1. **Improved Web Components** – Enhanced reusability and encapsulation for web components.
+2. **Better Form Controls** – More interactive and customizable form elements.
+3. **Improved Video & Audio Support** – Advanced media features, such as real-time effects.
+4. **AI & Machine Learning Integration** – Native support for AI-based elements.
+5. **Improved Accessibility Features** – More semantic elements and ARIA enhancements.
+6. **Native Support for WebSockets & Real-Time Communication** – Faster and more efficient web communication.
+7. **Advanced Graphics & Animation** – Better integration with **WebGL, Canvas, and SVG**.
+
+---
+
+## **2. HTML Entities & 5 Commonly Used HTML Entities**
+**HTML Entities** are special characters that can’t be typed directly into HTML, so they are represented using codes.
+
+| Entity Code | Symbol | Description |
+|-------------|--------|------------|
+| `&lt;`  | `<` | Less than |
+| `&gt;`  | `>` | Greater than |
+| `&amp;` | `&` | Ampersand |
+| `&quot;` | `"` | Double quote |
+| `&apos;` | `'` | Apostrophe |
+
+---
+
+## **3. Accessibility in Web Development**
+### **Definition:**
+Accessibility in web development means designing websites and applications so that **people with disabilities** (e.g., visually impaired, hearing impaired, or physically challenged users) can access, navigate, and interact with them **effectively**.
+
+### **Why Accessibility is Important?**
+1. **Inclusivity:** Ensures **everyone**, including disabled users, can use the website.  
+2. **Legal Compliance:** Many countries have laws requiring web accessibility (e.g., **ADA, WCAG**).  
+3. **SEO Benefits:** Improves search engine rankings (**Google prioritizes accessible websites**).  
+4. **Better User Experience:** Helps all users, including those with **temporary impairments** (e.g., broken arm, noisy environment).  
+
+---
+
+## **4. 3 Ways to Improve HTML Accessibility**
+1. **Use Semantic HTML** – Elements like `<header>`, `<nav>`, `<article>` improve readability for screen readers.  
+2. **Provide Alt Text for Images** – `<img src="image.jpg" alt="Description">` helps visually impaired users.  
+3. **Ensure Keyboard Navigation** – Make sure all functionalities work **without a mouse** (e.g., using `tab` key for navigation).  
+
+---
+
+
+## **6. Web Page Comparing HTML vs HTML5**
+This table highlights key **differences** between **HTML and HTML5**:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML vs HTML5</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid black; padding: 10px; text-align: center; }
+        th { background-color: lightgray; }
+    </style>
+</head>
+<body>
+    <h2>Comparison Table: HTML vs HTML5</h2>
+    <table>
+        <tr>
+            <th>HTML</th>
+            <th>HTML5</th>
+        </tr>
+        <tr>
+            <td>Does not support video & audio natively</td>
+            <td>Supports `<audio>` and `<video>` tags</td>
+        </tr>
+        <tr>
+            <td>No support for local storage</td>
+            <td>Supports Web Storage (LocalStorage & SessionStorage)</td>
+        </tr>
+        <tr>
+            <td>Uses non-semantic elements like `<div>` for structure</td>
+            <td>Uses semantic elements like `<article>`, `<section>`</td>
+        </tr>
+    </table>
+</body>
+</html>
+```
