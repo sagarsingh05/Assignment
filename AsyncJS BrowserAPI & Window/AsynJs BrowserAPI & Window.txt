@@ -1,0 +1,150 @@
+Q1: Define XMLHttpRequest Object and Its Use in AJAX
+Definition of XMLHttpRequest:
+The XMLHttpRequest (XHR) object is an API in JavaScript used to interact with web servers. It allows a web page to send and receive data asynchronously without reloading the page.
+
+How is it Used in AJAX?
+AJAX (Asynchronous JavaScript and XML) uses XMLHttpRequest to:
+
+Fetch data from a server.
+Send data to a server.
+Update web page content dynamically without refreshing.
+Steps to Use XMLHttpRequest in AJAX:
+Create an XMLHttpRequest object.
+Open a request (GET or POST).
+Send the request.
+Handle the response asynchronously when it's ready.
+
+**Q3: What is the Same-Origin Policy in AJAX Requests & How to Work Around It?**  
+
+ **Same-Origin Policy (SOP)**  
+The **Same-Origin Policy (SOP)** is a security mechanism in web browsers that restricts web pages from making AJAX requests to a different domain than the one that served the web page.  
+
+- **Origin** = **Protocol** (http/https) + **Domain** (example.com) + **Port** (if specified)  
+- Example:  
+  - Allowed: `https://example.com/page1` → `https://example.com/api/data`  
+  - Blocked: `https://example.com` → `https://anotherdomain.com`  
+
+ **Workarounds for Same-Origin Policy**  
+1. **CORS (Cross-Origin Resource Sharing)**
+   - The server can include special headers (`Access-Control-Allow-Origin`) to allow cross-origin requests.  
+   - Example:  
+     ```js
+     res.setHeader("Access-Control-Allow-Origin", "*");
+     ```
+   - If the API supports CORS, you can make AJAX requests from different origins.  
+
+2. **JSONP (JSON with Padding)**
+   - Works by injecting `<script>` tags instead of `XMLHttpRequest`.  
+   - Limited to `GET` requests.  
+
+3. **Proxy Server**
+   - Set up a **server-side proxy** to fetch data from the external API and serve it to your frontend.  
+
+---
+
+**Q4: Promises vs Callbacks & Why Promises Are Preferred**  
+
+**Callbacks:**
+- A function passed as an argument to another function and executed later.  
+- Problem: **Callback Hell** (nested callbacks are hard to read and debug).  
+- Example:  
+  ```js
+  function fetchData(callback) {
+      setTimeout(() => {
+          callback("Data fetched");
+      }, 2000);
+  }
+  fetchData(data => console.log(data));
+  ```
+  - If multiple async tasks are required, callbacks get deeply nested.  
+
+**Promises (Preferred Over Callbacks)**
+- Provides better **readability** and avoids **callback hell**.
+- Uses `.then()` and `.catch()` for chaining.
+- Example:  
+  ```js
+  function fetchData() {
+      return new Promise((resolve, reject) => {
+          setTimeout(() => {
+              resolve("Data fetched");
+          }, 2000);
+      });
+  }
+  fetchData().then(data => console.log(data)).catch(error => console.log(error));
+  ```
+
+**Why Promises Are Preferred?**
+1. **Chaining:** `.then()` makes code cleaner.  
+2. **Error Handling:** `.catch()` helps handle errors easily.  
+3. **Avoids Callback Hell:** Sequential operations are easier.  
+
+**Modern Approach:** `async/await` (built on Promises)  
+
+---
+
+**Q5: Common Browser APIs in JavaScript**  
+
+Browser APIs provide built-in functionalities for web development. Some key APIs include:  
+
+1. **DOM API** (Document Object Model)  
+   - Used to manipulate HTML & CSS dynamically.  
+   - Example:  
+     ```js
+     document.getElementById("title").textContent = "Hello!";
+     ```
+
+2. **Fetch API**  
+   - Used for making HTTP requests.  
+   - Example:  
+     ```js
+     fetch("https://jsonplaceholder.typicode.com/users")
+         .then(res => res.json())
+         .then(data => console.log(data));
+     ```
+
+3. **LocalStorage & SessionStorage API**  
+   - Used to store key-value pairs in the browser.  
+
+4. **Geolocation API**  
+   - Retrieves user location.  
+   - Example:  
+     ```js
+     navigator.geolocation.getCurrentPosition(pos => console.log(pos.coords));
+     ```
+
+5. **Canvas API**  
+   - Used for drawing graphics on a webpage.  
+   - Example:  
+     ```js
+     const canvas = document.getElementById("myCanvas");
+     const ctx = canvas.getContext("2d");
+     ctx.fillStyle = "blue";
+     ctx.fillRect(10, 10, 100, 100);
+     ```
+
+---
+
+**Q6: `localStorage` & `sessionStorage` APIs**  
+
+**1. `localStorage`**
+- Stores data with **no expiration**.  
+- Data persists **even after the user closes the browser**.  
+- Example:  
+  ```js
+  localStorage.setItem("username", "JohnDoe");
+  console.log(localStorage.getItem("username")); // Output: JohnDoe
+  ```
+
+**2. `sessionStorage`**
+- Stores data **only for the current session**.  
+- Data is lost **when the user closes the tab or browser**.  
+- Example:  
+  ```js
+  sessionStorage.setItem("sessionID", "12345");
+  console.log(sessionStorage.getItem("sessionID")); // Output: 12345
+  ```
+
+**When to Use?**  
+- **Use `localStorage`** for persistent data like user settings or themes.  
+- **Use `sessionStorage`** for temporary data like login sessions.  
+
